@@ -5,7 +5,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.droid.diexample.R
-import com.droid.diexample.domain.BlogDomain
+import com.droid.diexample.domain.model.BlogDomain
 import com.droid.diexample.util.DataState
 
 import dagger.hilt.android.AndroidEntryPoint

@@ -1,9 +1,8 @@
 package com.droid.diexample.domain.usecases
 
-import com.droid.diexample.domain.BlogDomain
+import com.droid.diexample.domain.model.BlogDomain
 import com.droid.diexample.domain.repository.IBlogsRepository
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 
 typealias BlogsBaseUseCase = BaseUseCase<Unit, Flow<List<BlogDomain>>>
 

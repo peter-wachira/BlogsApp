@@ -1,7 +1,7 @@
 package com.droid.diexample.data.local.mapper
 
 import com.droid.diexample.data.local.entity.BlogCacheEntity
-import com.droid.diexample.domain.BlogDomain
+import com.droid.diexample.domain.model.BlogDomain
 import com.droid.diexample.util.EntityMapper
 import javax.inject.Inject
 

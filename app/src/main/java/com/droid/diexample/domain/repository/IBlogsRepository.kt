@@ -1,6 +1,6 @@
 package com.droid.diexample.domain.repository
 
-import com.droid.diexample.domain.BlogDomain
+import com.droid.diexample.domain.model.BlogDomain
 import kotlinx.coroutines.flow.Flow
 
 interface IBlogsRepository {
