@@ -5,6 +5,7 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.droid.diexample.domain.model.BlogDomain
 import com.droid.diexample.data.BlogRepository
+import com.droid.diexample.domain.usecases.BlogsBaseUseCase
 import com.droid.diexample.presenter.states.DataState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
@@ -16,7 +17,7 @@ import kotlinx.coroutines.launch
 class MainViewModel
 @ViewModelInject
 constructor(
-    private val mainRepository: BlogRepository,
+    private val mainRepository: BlogsBaseUseCase,
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
@@ -24,6 +25,8 @@ constructor(
 
     val dataState: LiveData<DataState<List<BlogDomain>>>
         get() = _dataState
+
+
 
     fun setStateEvent(mainStateEvent: MainStateEvent) {
         viewModelScope.launch {
