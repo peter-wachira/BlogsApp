@@ -29,7 +29,6 @@ constructor():
         )
     }
 
-
     fun mapFromEntityList(entities: List<BlogNetworkEntity>): List<Blog>{
         return entities.map { mapFromEntity(it) }
     }
