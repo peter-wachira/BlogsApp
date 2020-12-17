@@ -1,13 +1,13 @@
 package com.droid.diexample.data.remote.mapper
 
 import com.droid.diexample.data.remote.model.BlogNetworkEntity
-import com.droid.diexample.model.Blog
+import com.droid.diexample.domain.Blog
 import com.droid.diexample.util.EntityMapper
 import javax.inject.Inject
 
 class NetworkMapper
 @Inject
-constructor():
+constructor() :
     EntityMapper<BlogNetworkEntity, Blog> {
 
     override fun mapFromEntity(entity: BlogNetworkEntity): Blog {
@@ -30,7 +30,7 @@ constructor():
         )
     }
 
-    fun mapFromEntityList(entities: List<BlogNetworkEntity>): List<Blog>{
+    fun mapFromEntityList(entities: List<BlogNetworkEntity>): List<Blog> {
         return entities.map { mapFromEntity(it) }
     }
 

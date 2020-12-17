@@ -3,7 +3,7 @@ package com.droid.diexample.ui
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.droid.diexample.model.Blog
+import com.droid.diexample.domain.Blog
 import com.droid.diexample.data.MainRepository
 import com.droid.diexample.util.DataState
 import kotlinx.coroutines.ExperimentalCoroutinesApi

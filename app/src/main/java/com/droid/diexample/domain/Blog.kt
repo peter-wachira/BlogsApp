@@ -1,4 +1,4 @@
-package com.droid.diexample.model
+package com.droid.diexample.domain
 
 data class Blog (
     var id: Int,

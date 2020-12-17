@@ -1,12 +1,11 @@
 package com.droid.diexample.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Message
 import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.droid.diexample.R
-import com.droid.diexample.model.Blog
+import com.droid.diexample.domain.Blog
 import com.droid.diexample.util.DataState
 
 import dagger.hilt.android.AndroidEntryPoint
