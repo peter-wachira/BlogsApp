@@ -2,7 +2,6 @@ package com.droid.diexample.data
 
 import com.droid.diexample.domain.Blog
 import com.droid.diexample.data.remote.api.BlogApiService
-import com.droid.diexample.data.remote.mapper.NetworkMapper
 import com.droid.diexample.data.local.dao.BlogDao
 import com.droid.diexample.data.local.mapper.CacheMapper
 import com.droid.diexample.util.DataState
