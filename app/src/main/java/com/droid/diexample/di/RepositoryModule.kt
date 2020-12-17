@@ -1,6 +1,6 @@
 package com.droid.diexample.di
 
-import com.droid.diexample.data.MainRepository
+import com.droid.diexample.data.BlogRepository
 import com.droid.diexample.data.remote.api.BlogApiService
 import com.droid.diexample.data.local.dao.BlogDao
 import com.droid.diexample.data.local.mapper.CacheMapper
@@ -20,7 +20,7 @@ object  RepositoryModule {
         retrofit: BlogApiService,
         cacheMapper: CacheMapper,
         networkMapper: NetworkMapper
-    ) : MainRepository {
-        return MainRepository(blogDao,retrofit,cacheMapper,networkMapper)
+    ) : BlogRepository {
+        return BlogRepository(blogDao,retrofit,cacheMapper,networkMapper)
     }
 }
