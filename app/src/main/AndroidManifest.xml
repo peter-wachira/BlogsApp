@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.droid.diexample">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+gi
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
