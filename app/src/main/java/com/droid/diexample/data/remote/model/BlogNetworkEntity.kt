@@ -1,8 +1,7 @@
-package com.droid.diexample.retrofit
+package com.droid.diexample.data.remote.model
 
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
-import retrofit2.http.Body
 
 data class BlogNetworkEntity(
     @SerializedName("pk")

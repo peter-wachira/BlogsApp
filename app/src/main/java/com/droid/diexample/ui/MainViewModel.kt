@@ -4,7 +4,7 @@ import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.droid.diexample.model.Blog
-import com.droid.diexample.repository.MainRepository
+import com.droid.diexample.data.MainRepository
 import com.droid.diexample.util.DataState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
@@ -16,8 +16,8 @@ import kotlinx.coroutines.launch
 class MainViewModel
 @ViewModelInject
 constructor(
-        private val mainRepository: MainRepository,
-        @Assisted private val savedStateHandle: SavedStateHandle
+    private val mainRepository: MainRepository,
+    @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val _dataState: MutableLiveData<DataState<List<Blog>>> = MutableLiveData()

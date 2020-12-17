@@ -1,7 +1,7 @@
-package com.droid.diexample.room
+package com.droid.diexample.data.local.mapper
 
+import com.droid.diexample.data.local.entity.BlogCacheEntity
 import com.droid.diexample.model.Blog
-import com.droid.diexample.retrofit.BlogNetworkEntity
 import com.droid.diexample.util.EntityMapper
 import javax.inject.Inject
 

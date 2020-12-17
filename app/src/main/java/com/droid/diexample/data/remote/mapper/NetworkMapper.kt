@@ -1,5 +1,6 @@
-package com.droid.diexample.retrofit
+package com.droid.diexample.data.remote.mapper
 
+import com.droid.diexample.data.remote.model.BlogNetworkEntity
 import com.droid.diexample.model.Blog
 import com.droid.diexample.util.EntityMapper
 import javax.inject.Inject

@@ -2,8 +2,8 @@ package com.droid.diexample.di
 
 import android.content.Context
 import androidx.room.Room
-import com.droid.diexample.room.BlogDao
-import com.droid.diexample.room.BlogDatabase
+import com.droid.diexample.data.local.dao.BlogDao
+import com.droid.diexample.data.local.BlogDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
