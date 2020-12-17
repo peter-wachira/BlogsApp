@@ -6,7 +6,7 @@ import retrofit2.http.GET
 interface BlogApiService {
 
     @GET("blogs")
-    suspend fun get(): BlogResponse
+    suspend fun getBlogs(): BlogResponse
 }
 
 
