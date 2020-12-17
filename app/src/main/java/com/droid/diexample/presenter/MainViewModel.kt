@@ -1,11 +1,11 @@
-package com.droid.diexample.ui
+package com.droid.diexample.presenter
 
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.droid.diexample.domain.model.BlogDomain
 import com.droid.diexample.data.BlogRepository
-import com.droid.diexample.util.DataState
+import com.droid.diexample.presenter.states.DataState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach

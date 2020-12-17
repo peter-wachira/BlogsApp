@@ -1,4 +1,4 @@
-package com.droid.diexample.util
+package com.droid.diexample.presenter.states
 
 import java.lang.Exception
 

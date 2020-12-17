@@ -1,4 +1,4 @@
-package com.droid.diexample.ui
+package com.droid.diexample.presenter
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.droid.diexample.R
 import com.droid.diexample.domain.model.BlogDomain
-import com.droid.diexample.util.DataState
+import com.droid.diexample.presenter.states.DataState
 
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_main.*
