@@ -1,6 +1,6 @@
 package com.droid.diexample.data
 
-import com.droid.diexample.domain.Blog
+import com.droid.diexample.domain.BlogDomain
 import com.droid.diexample.data.remote.api.BlogApiService
 import com.droid.diexample.data.local.dao.BlogDao
 import com.droid.diexample.data.local.mapper.CacheMapper
@@ -16,7 +16,7 @@ constructor(
     private val cacheMapper: CacheMapper,
     private val networkMapper: NetworkMapper
 ){
-    suspend fun getBlogs(): Flow<DataState<List<Blog>>> = flow {
+    suspend fun getBlogs(): Flow<DataState<List<BlogDomain>>> = flow {
         emit(DataState.Loading)
         delay(1000)
         try{

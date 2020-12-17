@@ -1,6 +1,6 @@
 package com.droid.diexample.domain
 
-data class Blog (
+data class BlogDomain (
     var id: Int,
     var title: String,
     var image: String,

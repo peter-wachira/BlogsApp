@@ -1,17 +1,17 @@
 package com.droid.diexample.data.local.mapper
 
 import com.droid.diexample.data.local.entity.BlogCacheEntity
-import com.droid.diexample.domain.Blog
+import com.droid.diexample.domain.BlogDomain
 import com.droid.diexample.util.EntityMapper
 import javax.inject.Inject
 
 class CacheMapper
 @Inject
 constructor():
-        EntityMapper<BlogCacheEntity, Blog> {
+        EntityMapper<BlogCacheEntity, BlogDomain> {
 
-    override fun mapFromEntity(entity: BlogCacheEntity): Blog {
-        return Blog(
+    override fun mapFromEntity(entity: BlogCacheEntity): BlogDomain {
+        return BlogDomain(
                 id = entity.id,
                 title = entity.title,
                 body = entity.body,
@@ -20,7 +20,7 @@ constructor():
         )
     }
 
-    override fun mapToEntity(domainModel: Blog): BlogCacheEntity {
+    override fun mapToEntity(domainModel: BlogDomain): BlogCacheEntity {
         return BlogCacheEntity(
                 id = domainModel.id,
                 title = domainModel.title,
@@ -30,7 +30,7 @@ constructor():
         )
     }
 
-    fun mapFromEntityList(entities: List<BlogCacheEntity>): List<Blog>{
+    fun mapFromEntityList(entities: List<BlogCacheEntity>): List<BlogDomain>{
         return entities.map { mapFromEntity(it) }
     }
 }

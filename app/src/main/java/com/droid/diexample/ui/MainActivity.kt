@@ -5,7 +5,7 @@ import android.view.View
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.droid.diexample.R
-import com.droid.diexample.domain.Blog
+import com.droid.diexample.domain.BlogDomain
 import com.droid.diexample.util.DataState
 
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     private fun subscribeObservers(){
         viewModel.dataState.observe(this, Observer { dataState ->
             when(dataState){
-               is DataState.Success<List<Blog>> ->{
+               is DataState.Success<List<BlogDomain>> ->{
                     displayProgressBar(false)
                    appendBlogTitles(dataState.data)
                }
@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity() {
         if (message != null) text.text = message else text.text = "Unknown error."
     }
 
-    private fun appendBlogTitles(blogs: List<Blog>){
+    private fun appendBlogTitles(blogs: List<BlogDomain>){
         val sb = StringBuilder()
         for(blog in  blogs){
             sb.append(blog.title + "\n");

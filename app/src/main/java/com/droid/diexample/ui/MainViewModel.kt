@@ -3,7 +3,7 @@ package com.droid.diexample.ui
 import androidx.hilt.Assisted
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
-import com.droid.diexample.domain.Blog
+import com.droid.diexample.domain.BlogDomain
 import com.droid.diexample.data.MainRepository
 import com.droid.diexample.util.DataState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -20,9 +20,9 @@ constructor(
     @Assisted private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val _dataState: MutableLiveData<DataState<List<Blog>>> = MutableLiveData()
+    private val _dataState: MutableLiveData<DataState<List<BlogDomain>>> = MutableLiveData()
 
-    val dataState: LiveData<DataState<List<Blog>>>
+    val dataState: LiveData<DataState<List<BlogDomain>>>
         get() = _dataState
 
     fun setStateEvent(mainStateEvent: MainStateEvent) {
