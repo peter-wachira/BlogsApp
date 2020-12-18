@@ -1,35 +1,16 @@
 package com.droid.diexample.di
 
-import android.content.Context
 import androidx.room.Room
-import com.droid.diexample.data.local.dao.BlogDao
+import androidx.room.RoomDatabase
 import com.droid.diexample.data.local.BlogDatabase
-import dagger.Module
-import dagger.Provides
-import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
-import dagger.hilt.android.qualifiers.ApplicationContext
-import javax.inject.Singleton
+import org.koin.dsl.module
 
-@InstallIn(ApplicationComponent::class)
-@Module
-object RoomModule {
 
-    @Singleton
-    @Provides
-    fun provideBlogDb(@ApplicationContext context: Context): BlogDatabase {
-        return Room
-            .databaseBuilder(
-                context,
-                BlogDatabase::class.java,
-                BlogDatabase.DATABASE_NAME)
+val roomModule = module {
+    single {
+        Room.databaseBuilder(get(), BlogDatabase::class.java, BlogDatabase.DATABASE_NAME)
             .fallbackToDestructiveMigration()
             .build()
     }
-
-    @Singleton
-    @Provides
-    fun provideBlogDAO(blogDatabase: BlogDatabase): BlogDao {
-        return blogDatabase.blogDao()
-    }
+    single { get<BlogDatabase>().blogDao() }
 }
