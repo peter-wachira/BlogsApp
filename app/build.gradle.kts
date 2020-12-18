@@ -1,32 +1,34 @@
-apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
+plugins{
+    id("com.android.application")
+    id("kotlin-android")
+    id("kotlin-android-extensions")
+    id("kotlin-kapt")
+}
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion "29.0.3"
+    compileSdkVersion (29)
+    buildToolsVersion  = "29.0.3"
 
     defaultConfig {
-        applicationId "com.droid.diexample"
-        minSdkVersion 21
-        targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        applicationId = "com.droid.diexample"
+        minSdkVersion (21)
+        targetSdkVersion (29)
+        versionCode  = 1
+        versionName = "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        getByName("release") {
+            isMinifyEnabled = false
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
         }
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {
@@ -36,37 +38,36 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.20"
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.core:core-ktx:1.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //app dependencies
+    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+    implementation ("org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.4.20")
+    implementation ("androidx.appcompat:appcompat:1.1.0")
+    implementation ("androidx.core:core-ktx:1.3.0")
+    implementation ("androidx.constraintlayout:constraintlayout:1.1.3")
 
     //koin
     implementation ("org.koin:koin-android:2.1.5")
     implementation ("org.koin:koin-android-scope:2.1.5")
     implementation("org.koin:koin-androidx-viewmodel:2.1.5")
 
-    def fragment_ktx = "1.2.5"
-    implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
+    //fragment -ktx
+    implementation ("androidx.fragment:fragment-ktx:1.2.5")
+    //lifecycle
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0")
 
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
-
-    def retrofit = "2.6.0"
-    implementation "com.squareup.retrofit2:retrofit:$retrofit"
-    implementation "com.squareup.retrofit2:converter-gson:$retrofit"
-
+    //retrofit
+    implementation ("com.squareup.retrofit2:retrofit:2.6.0")
+    implementation ("com.squareup.retrofit2:converter-gson:2.6.0")
+    //logging
     implementation("com.squareup.okhttp3:logging-interceptor:4.2.1")
 
-    def room = "2.2.5"
-    implementation "androidx.room:room-runtime:$room"
-    implementation "androidx.room:room-ktx:$room"
-    kapt "androidx.room:room-compiler:$room"
-}
+    //room
+    implementation ("androidx.room:room-runtime:2.2.5")
+    implementation ("androidx.room:room-ktx:2.2.5")
+    kapt ("androidx.room:room-compiler:2.2.5")
 
-kapt {
-    correctErrorTypes true
+    //test
+    testImplementation ("junit:junit:4.12")
+    androidTestImplementation ("androidx.test.ext:junit:1.1.1")
+    androidTestImplementation ("androidx.test.espresso:espresso-core:3.2.0")
 }
