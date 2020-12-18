@@ -3,9 +3,6 @@ package com.droid.diexample.data.remote.model
 import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
-data class BlogResponse(
-    val response:List<Blog>
-)
 data class Blog(
     @SerializedName("pk")
     @Expose

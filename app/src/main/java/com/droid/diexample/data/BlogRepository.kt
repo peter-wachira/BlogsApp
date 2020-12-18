@@ -14,7 +14,7 @@ class BlogRepository constructor(
         flow {
             val blogResponse = blogApiService.getBlogs()
             val blogs = mutableListOf<BlogDomain>()
-            for (blog in blogResponse.response){
+            for (blog in blogResponse){
                 blogs.add(blog.toDomain())
             }
             emit(blogs)

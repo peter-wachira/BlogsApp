@@ -1,26 +1,18 @@
-package com.droid.diexample.presenter
+package com.droid.diexample.presenter.viewmodels
 
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
+import android.util.Log
 import androidx.lifecycle.*
-import com.droid.diexample.domain.model.BlogDomain
-import com.droid.diexample.data.BlogRepository
 import com.droid.diexample.domain.usecases.BlogsBaseUseCase
 import com.droid.diexample.presenter.mappers.toPresenter
 import com.droid.diexample.presenter.models.BlogPresentation
 import com.droid.diexample.presenter.states.BlogViewState
-import com.droid.diexample.presenter.states.DataState
 import com.droid.diexample.presenter.states.Error
-import com.droid.diexample.presenter.viewmodels.BaseViewModel
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
 
 
 @ExperimentalCoroutinesApi
 class MainViewModel
-@ViewModelInject
 constructor(
     private val blogRepository: BlogsBaseUseCase
 ) : BaseViewModel() {

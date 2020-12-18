@@ -2,40 +2,37 @@ package com.droid.diexample.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import androidx.activity.viewModels
-import androidx.lifecycle.Observer
 import com.droid.diexample.R
-import com.droid.diexample.domain.model.BlogDomain
 import com.droid.diexample.presenter.models.BlogPresentation
-import com.droid.diexample.presenter.states.DataState
-
-import dagger.hilt.android.AndroidEntryPoint
+import com.droid.diexample.presenter.viewmodels.MainViewModel
 import kotlinx.android.synthetic.main.fragment_main.*
+import org.koin.androidx.viewmodel.compat.ScopeCompat.viewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.lang.StringBuilder
 
 
-@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private val TAG = "AppDebug"
-    private val viewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModel()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        viewModel.executeGetBlogs()
+        mainViewModel.executeGetBlogs()
         observeViewState()
     }
 
     private fun observeViewState() {
-        viewModel.blogState.observe(this, {
-            if (it.isLoading) {
+        mainViewModel.blogState.observe(this, {states ->
+            if (states.isLoading) {
                 displayProgressBar(true)
             }
-            it.blogResults.let { blogResult ->
-                appendBlogTitles(blogResult!!)
+            states.blogResults?.let { blogs ->
+                appendBlogTitles(blogs)
             }
-            it.error.run {
-                displayError(this!!.message)
+            states.error?.run {
+                displayError(this.message)
             }
         })
     }
