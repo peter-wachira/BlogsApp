@@ -1,7 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-apply plugin: 'dagger.hilt.android.plugin'
 apply plugin: 'kotlin-kapt'
 
 android {
@@ -46,13 +45,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
-    def hilt_version = "2.28-alpha"
-    implementation "com.google.dagger:hilt-android:$hilt_version"
-    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-
-    def hilt_viewmodels = "1.0.0-alpha01"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_viewmodels"
-    kapt "androidx.hilt:hilt-compiler:$hilt_viewmodels"
+    //koin
+    implementation ("org.koin:koin-android:2.1.5")
+    implementation ("org.koin:koin-android-scope:2.1.5")
+    implementation("org.koin:koin-androidx-viewmodel:2.1.5")
 
     def fragment_ktx = "1.2.5"
     implementation "androidx.fragment:fragment-ktx:$fragment_ktx"
