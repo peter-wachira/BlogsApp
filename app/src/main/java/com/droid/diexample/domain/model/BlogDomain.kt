@@ -1,6 +1,6 @@
-package com.droid.diexample.model
+package com.droid.diexample.domain.model
 
-data class Blog (
+data class BlogDomain (
     var id: Int,
     var title: String,
     var image: String,

@@ -1,9 +1,10 @@
-package com.droid.diexample.room
+package com.droid.diexample.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import com.droid.diexample.data.local.entity.BlogCacheEntity
 
 @Dao
 interface BlogDao {

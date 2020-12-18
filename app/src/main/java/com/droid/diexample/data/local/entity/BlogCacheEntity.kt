@@ -1,4 +1,4 @@
-package com.droid.diexample.room
+package com.droid.diexample.data.local.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

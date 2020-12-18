@@ -1,7 +1,22 @@
 package com.droid.diexample
 
 import android.app.Application
-import dagger.hilt.android.HiltAndroidApp
+import com.droid.diexample.di.*
+import org.koin.android.ext.koin.androidContext
+import org.koin.core.context.startKoin
 
-@HiltAndroidApp
-class MyApplication : Application()
+class MyApplication : Application(){
+    override fun onCreate() {
+        super.onCreate()
+        startKoin {
+            androidContext(this@MyApplication)
+            modules(
+                networkModule,
+                viewModelModule,
+                remoteDataSourceModule,
+                useCaseModule,
+                roomModule
+            )
+        }
+    }
+}
