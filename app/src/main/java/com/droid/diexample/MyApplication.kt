@@ -13,7 +13,6 @@ class MyApplication : Application(){
             modules(
                 networkModule,
                 viewModelModule,
-                // localDataSourceModule,
                 remoteDataSourceModule,
                 useCaseModule,
                 roomModule
