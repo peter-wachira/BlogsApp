@@ -9,5 +9,5 @@ import org.koin.dsl.module
 val useCaseModule = module {
     single(named("blogs")) { provideBlogUseCase(get()) }
 }
-internal fun provideBlogUseCase(location: IBlogsRepository): BlogsBaseUseCase =
-    BlogsUseCase(location)
+internal fun provideBlogUseCase(blog: IBlogsRepository): BlogsBaseUseCase =
+    BlogsUseCase(blog)
